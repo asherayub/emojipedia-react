@@ -1,9 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import data from "./data";
+import Card from "./components/Card";
 function App() {
   return (
-    <h1>Hello There</h1>
+    <>
+      <Header />
+      <div className="cards">
+        {data.map((em) => {
+          return (
+            <Card emoji={em.name} emojiheader={em.title} emojiexp={em.exp} />
+          );
+        })}
+      </div>
+    </>
   );
 }
 
